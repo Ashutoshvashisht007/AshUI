@@ -5,7 +5,7 @@ import Dropdown from './components/Dropdown'
 function App() {
 
   const components = ['Buttons', 'Dropdown'];
-  const [selectedComponent, setSelectedComponent] = useState(components[0]);
+  const [selectedComponent, setSelectedComponent] = useState(components[1]);
 
   return (
     <div className='p-10 max-w-[80vw] mx-auto border-l border-r border-l-gray-500 border-r-gray-500 h-screen'>
