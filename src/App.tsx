@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import Buttons from './builds/ui/button/Buttons'
 import Dropdown from './builds/ui/dropdown/Dropdown'
+import MotionLayout from './builds/motion/layout';
 
 function App() {
 
-  const components = ['Buttons', 'Dropdown'];
+  const components = ['Buttons', 'Dropdown', 'Motion Layout'];
   const [selectedComponent, setSelectedComponent] = useState(components[1]);
 
   return (
@@ -17,6 +18,7 @@ function App() {
       </div>
       {selectedComponent === 'Buttons' && <Buttons />}
       {selectedComponent === 'Dropdown' && <Dropdown />}
+      {selectedComponent === 'Motion Layout' && <MotionLayout />}
     </div>
   )
 }
