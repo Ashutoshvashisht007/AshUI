@@ -21,16 +21,82 @@
     width: 0 !important;
     height: 0 !important;
   }
+
   /* extra safety for thumb/track */
   .scrollbar-hide::-webkit-scrollbar-thumb {
     background: transparent !important;
   }
+
   .scrollbar-hide::-webkit-scrollbar-track {
     background: transparent !important;
   }
 
   .scrollbar-hide {
-    -ms-overflow-style: none !important; /* IE/Edge */
-    scrollbar-width: none !important;    /* Firefox */
+    -ms-overflow-style: none !important;
+    /* IE/Edge */
+    scrollbar-width: none !important;
+    /* Firefox */
   }
+}
+
+.btn-style703 {
+  position: relative;
+
+  background-color: gray;
+
+  border-color: #dd7e2a;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+
+.btn-style703::before,
+.btn-style703::after,
+.btn-style703 span::before,
+.btn-style703 span::after {
+  width: 110%;
+  height: 130%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.3s;
+
+  border: 0px solid #dd7e2a;
+  content: "";
+  pointer-events: none;
+}
+
+.btn-style703::before {
+  border-top-width: 1px;
+  transition-delay: 0.3s;
+  transform-origin: right top;
+}
+
+.btn-style703::after {
+  border-bottom-width: 1px;
+  transition-delay: 0.9s;
+  transform-origin: left bottom;
+}
+
+.btn-style703 span::before {
+  border-left-width: 1px;
+  transition-delay: 0.6s;
+  transform-origin: left top;
+}
+
+.btn-style703 span::after {
+  border-right-width: 1px;
+  transition-delay: 0s;
+  transform-origin: right bottom;
+}
+
+.btn-style703:hover::before,
+.btn-style703:hover::after,
+.btn-style703:hover span::before,
+.btn-style703:hover span::after {
+  transform: translate(-50%, -50%) scale(1);
 }

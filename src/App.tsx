@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Buttons from './components/Buttons'
-import Dropdown from './components/Dropdown'
+import Buttons from './builds/ui/button/Buttons'
+import Dropdown from './builds/ui/dropdown/Dropdown'
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
   const [selectedComponent, setSelectedComponent] = useState(components[1]);
 
   return (
-    <div className='p-10 max-w-[80vw] mx-auto border-l border-r border-l-gray-500 border-r-gray-500 h-screen'>
+    <div className='p-10 max-w-[80vw] mx-auto border-l border-r border-l-gray-500 border-r-gray-500 h-screen overflow-scroll scrollbar-hide'>
       <h1 className='font-bold text-2xl text-center'>Components</h1>
       <div className='mt-5 flex gap-4 items-center justify-center text-xl'>
         {
