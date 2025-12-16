@@ -2,10 +2,11 @@ import { useState } from 'react'
 import Buttons from './builds/ui/button/Buttons'
 import Dropdown from './builds/ui/dropdown/Dropdown'
 import MotionLayout from './builds/motion/layout';
+import Bento_Grids from './builds/bento-grids/Bento_Grids';
 
 function App() {
 
-  const components = ['Buttons', 'Dropdown', 'Motion Layout'];
+  const components = ['Buttons', 'Dropdown', 'Motion Layout','Bento Grids'];
   const [selectedComponent, setSelectedComponent] = useState(components[1]);
 
   return (
@@ -19,6 +20,7 @@ function App() {
       {selectedComponent === 'Buttons' && <Buttons />}
       {selectedComponent === 'Dropdown' && <Dropdown />}
       {selectedComponent === 'Motion Layout' && <MotionLayout />}
+      {selectedComponent === 'Bento Grids' && <Bento_Grids />}
     </div>
   )
 }

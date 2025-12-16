@@ -120,3 +120,41 @@ export const layoutItems = [
     createdAt: "2025-01-30"
   }
 ];
+
+export const GridItems = [
+  {
+    id: 1,
+    title: 'Dashboard that matters',
+    description: 'Discover insights and trends with our advanced analytics dashboard.',
+    imageSrc: '/images/bento-1.png', 
+    span: 'col-span-1',
+  },
+  {
+    id: 2,
+    title: 'Automated emails',
+    description: 'Send emails in bulk to everyone, with AI-powered suggestions.',
+    imageSrc: '/images/bento-2.png',
+    span: 'col-span-1',
+  },
+  {
+    id: 3,
+    title: 'Super fast Analytics',
+    description: 'Get insights on your data with our blazing fast analytics dashboard.',
+    imageSrc: '/images/bento-4.png',
+    span: 'col-span-1',
+  },
+  {
+    id: 4,
+    title: 'Admin portal',
+    description: 'Manage your data with our admin portal.',
+    imageSrc: '/images/bento-5.png',
+    span: 'col-span-2', 
+  },
+  {
+    id: 5,
+    title: '99.99% uptime SLA',
+    description: 'We guarantee 99.99% uptime SLA for our platform.',
+    imageSrc: '/images/bento-6.png',
+    span: 'col-span-1', 
+  },
+];
