@@ -1,4 +1,3 @@
-import React from 'react';
 import { GridItems } from '../../../utils/data';
 
 
@@ -11,22 +10,21 @@ const BentoGridItem = ({ title, idx, description, imageSrc, span }: { title: str
         3: 'absolute -left-4 rounded-lg',
         5: 'rounded-lg',
     };
-    // console.log(imageStyles[1])
 
     return (
         <div
-            className={`bg-gray-900 rounded-xl p-5 shadow-lg flex h-100 flex-col justify-between overflow-hidden relative
+            className={`bg-neutral-800 rounded-xl p-5 shadow-lg flex h-100 flex-col justify-between overflow-hidden relative
         ${span} 
-        transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl
+        transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group
         cursor-pointer
         ${idx === 3 ? 'flex items-center justify-center' : ''}
       `}
         >
             <div className="mb-4">
-                <h3 className="text-xl font-bold text-white transition-colors duration-300">
+                <h3 className="text-xl group-hover:translate-x-2 font-bold text-white transition-all duration-300">
                     {title}
                 </h3>
-                <p className="text-gray-400 mt-1 text-sm transition-transform duration-300">
+                <p className="text-gray-400 group-hover:translate-x-4 mt-1 text-sm transition-all duration-300">
                     {description}
                 </p>
             </div>
@@ -36,20 +34,19 @@ const BentoGridItem = ({ title, idx, description, imageSrc, span }: { title: str
                     <>
                         <img
                             src="/images/bento-4.png"
-                            className="absolute w-[70%] left-4 top-24 rounded-xl shadow-xl"
+                            className="absolute w-[70%] group-hover:-rotate-4 transition-all duration-300 left-4 top-24 rounded-xl shadow-xl"
                         />
 
                         <img
                             src="/images/bento-4.png"
-                            className="absolute w-[45%] -right-2 -bottom-6 rounded-xl shadow-lg"
+                            className="absolute w-[45%] group-hover:rotate-4 transition-all duration-300 -right-2 -bottom-6 rounded-xl shadow-lg"
                         />
                     </>
                 ) : (
-                    // imageSrc && (
                         <img
                             src={imageSrc}
                             alt={title}
-                            className={`w-full h-auto object-cover transition-transform duration-500 hover:rotate-1 hover:shadow-xl ${imageStyles[idx] ?? ''} `}
+                            className={`w-full h-auto object-cover transition-transform duration-500 group-hover:rotate-1 hover:shadow-xl ${imageStyles[idx] ?? ''} `}
                             style={{ minHeight: '150px' }}
                         />
                     )}
