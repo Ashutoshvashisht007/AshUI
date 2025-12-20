@@ -1,3 +1,6 @@
+import { AlertCircle, Clock, CreditCard, Search, Shield, Sparkles, Zap } from "lucide-react";
+import { Activity } from "react";
+
 export const layoutItems = [
   {
     id: 7,
@@ -157,4 +160,55 @@ export const GridItems = [
     imageSrc: '/images/bento-6.png',
     span: 'col-span-1', 
   },
+];
+
+export const Categories = [
+  {
+    id: 'auth',
+    title: 'Auth',
+    icon: Shield,
+    color: 'from-blue-500 to-cyan-500',
+    details: [
+      { label: 'Status', value: 'Active', icon: Activity, status: 'success' },
+      { label: 'API Calls', value: '2.4M', icon: Zap, status: 'neutral' },
+      { label: 'Errors', value: '0.02%', icon: AlertCircle, status: 'success' },
+      { label: 'Latency', value: '45ms', icon: Clock, status: 'success' }
+    ]
+  },
+  {
+    id: 'payments',
+    title: 'Payments',
+    icon: CreditCard,
+    color: 'from-emerald-500 to-teal-500',
+    details: [
+      { label: 'Status', value: 'Active', icon: Activity, status: 'success' },
+      { label: 'API Calls', value: '890K', icon: Zap, status: 'neutral' },
+      { label: 'Errors', value: '0.01%', icon: AlertCircle, status: 'success' },
+      { label: 'Latency', value: '120ms', icon: Clock, status: 'warning' }
+    ]
+  },
+  {
+    id: 'search',
+    title: 'Search',
+    icon: Search,
+    color: 'from-violet-500 to-purple-500',
+    details: [
+      { label: 'Status', value: 'Active', icon: Activity, status: 'success' },
+      { label: 'API Calls', value: '5.2M', icon: Zap, status: 'neutral' },
+      { label: 'Errors', value: '0.15%', icon: AlertCircle, status: 'warning' },
+      { label: 'Latency', value: '85ms', icon: Clock, status: 'success' }
+    ]
+  },
+  {
+    id: 'ai',
+    title: 'AI',
+    icon: Sparkles,
+    color: 'from-orange-500 to-pink-500',
+    details: [
+      { label: 'Status', value: 'Active', icon: Activity, status: 'success' },
+      { label: 'API Calls', value: '1.8M', icon: Zap, status: 'neutral' },
+      { label: 'Errors', value: '0.08%', icon: AlertCircle, status: 'success' },
+      { label: 'Latency', value: '340ms', icon: Clock, status: 'warning' }
+    ]
+  }
 ];
