@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import Buttons from '../builds/ui/button/Buttons'
 import Dropdown from '../builds/ui/dropdown/Dropdown'
 import Bento_Grids from '../builds/bento-grids/Bento_Grids'
+import Sidebar from '../builds/sidebars'
 
-const components = ['Buttons', 'Dropdown', 'Bento Grids', 'Motion Layouts']
+const components = ['Buttons', 'Dropdown', 'Bento Grids', 'Motion Layouts', 'sidebar']
 
 const Home = () => {
   const [selected, setSelected] = useState('Buttons')
@@ -37,6 +38,7 @@ const Home = () => {
       {selected === 'Buttons' && <Buttons />}
       {selected === 'Dropdown' && <Dropdown />}
       {selected === 'Bento Grids' && <Bento_Grids />}
+      {selected === 'sidebar' && <Sidebar />}
     </>
   )
 }
