@@ -4,8 +4,7 @@ import AppRoutes from './routes/AppRoutes.tsx'
 function App() {
   return (
     <BrowserRouter>
-      <div className="p-10 max-w-[80vw] mx-auto border-l border-r border-gray-500 h-screen overflow-scroll scrollbar-hide">
-        <h1 className="font-bold text-2xl text-center">Components</h1>
+      <div className="max-w-[80vw] mx-auto border-gray-500 min-h-screen scrollbar-hide">
         <AppRoutes />
       </div>
     </BrowserRouter>

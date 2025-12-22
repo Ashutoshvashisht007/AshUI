@@ -5,7 +5,7 @@ import Dropdown from '../builds/ui/dropdown/Dropdown'
 import Bento_Grids from '../builds/bento-grids/Bento_Grids'
 import Sidebar from '../builds/sidebars'
 
-const components = ['Buttons', 'Dropdown', 'Bento Grids', 'Motion Layouts', 'sidebar']
+const components = ['Buttons', 'Dropdown', 'Bento Grids', 'Motion Layouts', 'sidebar', 'Scroll Animation']
 
 const Home = () => {
   const [selected, setSelected] = useState('Buttons')
@@ -14,14 +14,20 @@ const Home = () => {
   const handleClick = (item: string) => {
     if (item === 'Motion Layouts') {
       navigate('/motion')
-    } else {
+    } 
+    else if(item === 'Scroll Animation') {
+      navigate('/scroll')
+    }
+    else {
       setSelected(item)
     }
   }
 
   return (
     <>
-      <div className="mt-5 flex gap-4 justify-center text-xl">
+      <div className="mt-5 flex flex-col gap-2 justify-center text-xl">
+        <h1 className="font-bold text-2xl text-center">Components</h1>
+        <div className='flex gap-4 justify-center text-xl'>
         {components.map((item) => (
           <button
             key={item}
@@ -39,6 +45,7 @@ const Home = () => {
       {selected === 'Dropdown' && <Dropdown />}
       {selected === 'Bento Grids' && <Bento_Grids />}
       {selected === 'sidebar' && <Sidebar />}
+      </div>
     </>
   )
 }
