@@ -4,8 +4,10 @@ import Buttons from '../builds/ui/button/Buttons'
 import Dropdown from '../builds/ui/dropdown/Dropdown'
 import Bento_Grids from '../builds/bento-grids/Bento_Grids'
 import Sidebar from '../builds/sidebars'
+import AnimatedText from '../builds/ui/text/AnimatedText'
+import CodingLanguages from '../builds/ui/languages/CodingLanguages'
 
-const components = ['Buttons', 'Dropdown', 'Bento Grids', 'Motion Layouts', 'sidebar', 'Scroll Animation']
+const components = ['Buttons', 'Dropdown', 'Bento Grids', 'Motion Layouts', 'sidebar', 'Scroll Animation', 'Animated Text','Coding Languages']
 
 const Home = () => {
   const [selected, setSelected] = useState('Buttons')
@@ -45,6 +47,8 @@ const Home = () => {
       {selected === 'Dropdown' && <Dropdown />}
       {selected === 'Bento Grids' && <Bento_Grids />}
       {selected === 'sidebar' && <Sidebar />}
+      {selected === 'Animated Text' && <AnimatedText />}
+      {selected === 'Coding Languages' && <CodingLanguages />}
       </div>
     </>
   )
