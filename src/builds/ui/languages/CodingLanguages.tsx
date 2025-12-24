@@ -33,75 +33,66 @@ const CodingLanguages = () => {
 };
 
 const Card = ({ name, icon: Icon, color }: any) => {
-    const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
-    const dots = Array.from({ length: 150 }).map((_, i) => {
-        const angle = (Math.PI * 2 * i) / 50;
-        const radius = 20 + Math.random() * 70;
-        return {
-            id: i,
-            x: Math.cos(angle) * radius,
-            y: Math.sin(angle) * radius,
-            delay: Math.random() * 0.25,
-            size: 0.8 + Math.random() * 1.2,
-        };
-    });
+  return (
+    <div
+      className="relative w-40 h-32 border border-gray-800 overflow-hidden flex items-center justify-center cursor-pointer group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Dotted background */}
+      <div
+        className="absolute inset-0 transition-opacity duration-300"
+        style={{
+          backgroundImage: `
+            radial-gradient(${color} 0.6px, transparent 0.6px)
+          `,
+          backgroundSize: "10px 10px",
+          opacity: isHovered ? 0.6 : 0.25,
+          maskImage:
+            "radial-gradient(circle at center, black 55%, transparent 75%)",
+          WebkitMaskImage:
+            "radial-gradient(circle at center, black 55%, transparent 75%)",
+        }}
+      />
 
-    return (
-        <div
-            className="w-40 h-32 border border-gray-800 relative overflow-hidden flex items-center justify-center cursor-pointer"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+      {/* Subtle glow */}
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(circle at center, ${color}22, transparent 65%)`,
+        }}
+      />
+
+      {/* Icon + text */}
+      <div className="relative z-10 flex flex-col items-center">
+        <motion.div
+          animate={{
+            color: isHovered ? color : "#ffffff",
+            y: isHovered ? -6 : 0,
+          }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
         >
-            <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-                {dots.map((dot) => (
-                    <motion.div
-                        key={dot.id}
-                        className="absolute rounded-full"
-                        style={{
-                            width: dot.size,
-                            height: dot.size,
-                            backgroundColor: isHovered ? color : "transparent",
-                        }}
-                        initial={{ x: 0, y: 0, opacity: 0 }}
-                        animate={
-                            isHovered
-                                ? { x: dot.x, y: dot.y, opacity: 0.8 }
-                                : { x: 0, y: 0, opacity: 0 }
-                        }
-                        transition={{
-                            duration: 1,
-                            delay: dot.delay,
-                            ease: "easeOut",
-                        }}
-                    />
-                ))}
-            </div>
+          <Icon size={46} />
+        </motion.div>
 
-            {/* Icon */}
-            <div className={`relative z-10 flex flex-col items-center justify-center`}>
-                <motion.div
-                    animate={{ color: isHovered ? color : "#ffffff", y: isHovered ? -10 : 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                >
-                    <Icon size={48} />
-                </motion.div>
-                <AnimatePresence>
-                    <motion.div
-                        className="text-lg font-medium absolute"
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{
-                            opacity: isHovered ? 1 : 0,
-                            y: isHovered ? 30 : 50,
-                        }}
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    >
-                        {name}
-                    </motion.div>
-                </AnimatePresence>
-            </div>
-        </div>
-    );
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{
+            opacity: isHovered ? 1 : 0,
+            y: isHovered ? 14 : 8,
+          }}
+          transition={{ duration: 0.25 }}
+          className="text-sm font-medium absolute"
+        >
+          {name}
+        </motion.div>
+      </div>
+    </div>
+  );
 };
+
+
 
 export default CodingLanguages;
