@@ -1,9 +1,11 @@
 import Button_Swap from './Button_Swap';
 import Button_Border from "./Button_Border";
+import Button_Upload from './Button_Upload';
 
 const components = [
     Button_Swap,
-    Button_Border
+    Button_Border,
+    Button_Upload,
 ]
 
 const Buttons = () => {
